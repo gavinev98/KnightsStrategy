@@ -2,8 +2,6 @@ import java.util.Arrays;
 
 public class Character {
 
-
-
         String name;
         double health;
         String[] attackOptions;

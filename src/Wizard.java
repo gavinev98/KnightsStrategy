@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Wizard extends Character {
+public class Wizard extends Character implements FightingOptions {
 
     public Wizard(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
         super(name, health, attackOptions, specialAbility, clothingOptions);
@@ -34,5 +34,20 @@ public class Wizard extends Character {
     public String toString()
     {
         return "Name" + getName() + "Health" + getHealth() + "Attack Options" + Arrays.toString(attackOptions) + "Special Ability" + Arrays.toString(specialAbility) + "Clothing Options" + Arrays.toString(clothingOptions);
+    }
+
+    @Override
+    public double attack() {
+        return 0;
+    }
+
+    @Override
+    public double specialAbility() {
+        return 0;
+    }
+
+    @Override
+    public boolean isAlive() {
+        return false;
     }
 }
