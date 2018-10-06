@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Warrior extends Character implements FightingOptions {
+public class Warrior extends Character implements FightingOptions, IsAlive {
 
 
     public Warrior(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
