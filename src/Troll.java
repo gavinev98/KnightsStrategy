@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Troll extends Character implements FightingOptions {
+public class Troll extends Character implements FightingOptions, IsAlive {
 
 
     public Troll(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
