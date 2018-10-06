@@ -1,45 +1,9 @@
 import java.util.Arrays;
 
-public class Wizard {
+public class Wizard extends Character {
 
-    String name = "Wonderful Wizard";
-    double health = 100;
-    String[] attackOptions = new String[]{ "Magic Stick","Arrows" };
-    String[] specialAbility = new String[] {"Rage Spell", "Freeze Spell"};
-    String[] clothingOptions = new String[] {"Blue Wand", "Yellow Wand"};
-
-    public Wizard(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions)
-    {
-        this.name = name;
-        this.health = health;
-        this.attackOptions = attackOptions;
-        this.specialAbility = specialAbility;
-        this.clothingOptions = clothingOptions;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public void setHealth(double health)
-    {
-        this.health = health;
-    }
-
-    public void setAttackOptions(String[] attackOptions)
-    {
-        this.attackOptions = attackOptions;
-    }
-
-    public void setSpecialAbility(String[] specialAbility)
-    {
-        this.specialAbility = specialAbility;
-    }
-
-    public void setClothingOptions(String[] clothingOptions)
-    {
-        this.clothingOptions = clothingOptions;
+    public Wizard(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
+        super(name, health, attackOptions, specialAbility, clothingOptions);
     }
 
     public String getName()

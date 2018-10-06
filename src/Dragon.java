@@ -1,46 +1,11 @@
 import java.rmi.activation.ActivationGroup_Stub;
 import java.util.Arrays;
 
-public class Dragon {
+public class Dragon extends Character {
 
-    String name = "Spyro The Dragon";
-    double health = 100;
-    String[] attackOptions = new String[]{ "Breath Fire","Tale Swing" };
-    String[] specialAbility = new String[] {"Deal 100 Damage", "Sumo"};
-    String[] clothingOptions = new String[] {"Red Hat", "Yellow Hat"};
 
-    public Dragon(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions)
-    {
-        this.name = name;
-        this.health = health;
-        this.attackOptions = attackOptions;
-        this.specialAbility = specialAbility;
-        this.clothingOptions = clothingOptions;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public void setHealth(double health)
-    {
-        this.health = health;
-    }
-
-    public void setAttackOptions(String[] attackOptions)
-    {
-        this.attackOptions = attackOptions;
-    }
-
-    public void setSpecialAbility(String[] specialAbility)
-    {
-        this.specialAbility = specialAbility;
-    }
-
-    public void setClothingOptions(String[] clothingOptions)
-    {
-        this.clothingOptions = clothingOptions;
+    public Dragon(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
+        super(name, health, attackOptions, specialAbility, clothingOptions);
     }
 
     public String getName()
