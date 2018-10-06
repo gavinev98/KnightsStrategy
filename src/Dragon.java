@@ -1,7 +1,7 @@
 import java.rmi.activation.ActivationGroup_Stub;
 import java.util.Arrays;
 
-public class Dragon extends Character implements FightingOptions {
+public class Dragon extends Character implements FightingOptions, IsAlive {
 
 
     public Dragon(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
