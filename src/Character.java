@@ -2,6 +2,8 @@ import java.util.Arrays;
 
 public class Character {
 
+        FightingOptions  fightingOptions;
+
         String name;
         double health;
         String[] attackOptions;
@@ -66,6 +68,12 @@ public class Character {
         {
             return clothingOptions;
         }
+
+        public void attackEnemy()
+        {
+            fightingOptions.attack();
+        }
+
 
         public String toString()
         {
