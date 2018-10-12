@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Warrior extends Character implements FightingOptions, IsAlive {
+public class Warrior extends Character implements Cosmetics,  IsAlive {
 
 
     public Warrior(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
@@ -8,19 +8,13 @@ public class Warrior extends Character implements FightingOptions, IsAlive {
     }
 
 
-
-    @Override
-    public double attack() {
-        return 0;
-    }
-
-    @Override
-    public double specialAbility() {
-        return 0;
-    }
-
     @Override
     public boolean isAlive() {
         return false;
+    }
+
+    @Override
+    public void changeClothing() {
+
     }
 }
