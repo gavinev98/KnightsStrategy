@@ -8,10 +8,10 @@ public class GameDriver {
         String[] specialAbility = { "Cold Spell"};
         String[] clothingOptions = {"Blue Hair"};
 
-        Wizard w1 = new Wizard( name, health, attackOptions, specialAbility, clothingOptions);
+        Dragon w1 = new Dragon( name, health, attackOptions, specialAbility, clothingOptions);
 
-       String test = w1.getName();
+        w1.attackEnemy();
 
-        System.out.print(test);
+
     }
 }
