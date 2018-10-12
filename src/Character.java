@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 
 
-public class Character {
+public abstract class Character {
 
         FightingOptions  fightingOptions;
 
@@ -84,6 +84,8 @@ public class Character {
         {
             fightingOptions.attack();
         }
+
+
 
 
         public String toString()

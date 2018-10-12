@@ -1,4 +1,4 @@
 public interface Cosmetics {
 
-    public void changeClothing();
+    public String clothingOption();
 }

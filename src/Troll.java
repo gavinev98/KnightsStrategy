@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Troll extends Character implements Cosmetics, IsAlive {
+public class Troll extends Character implements Cosmetics,  IsAlive {
 
 
     public Troll(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
@@ -9,13 +9,15 @@ public class Troll extends Character implements Cosmetics, IsAlive {
 
 
 
+
     @Override
     public boolean isAlive() {
         return false;
     }
 
-    @Override
-    public void changeClothing() {
 
+    @Override
+    public String clothingOption() {
+        return "Warrior has blue hair";
     }
 }

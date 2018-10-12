@@ -1,11 +1,10 @@
 import java.util.Arrays;
 
-public class Wizard extends Character implements Cosmetics,  IsAlive {
+public class Wizard extends Character implements Cosmetics, IsAlive {
 
     public Wizard(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
         super(name, health, attackOptions, specialAbility, clothingOptions);
     }
-
 
 
     @Override
@@ -13,8 +12,9 @@ public class Wizard extends Character implements Cosmetics,  IsAlive {
         return false;
     }
 
-    @Override
-    public void changeClothing() {
 
+    @Override
+    public String clothingOption() {
+        return "Warrior has blue hair";
     }
 }

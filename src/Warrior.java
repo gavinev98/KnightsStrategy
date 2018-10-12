@@ -8,13 +8,16 @@ public class Warrior extends Character implements Cosmetics,  IsAlive {
     }
 
 
+
+
     @Override
     public boolean isAlive() {
         return false;
     }
 
-    @Override
-    public void changeClothing() {
 
+    @Override
+    public String clothingOption() {
+        return "Warrior has blue hair";
     }
 }
