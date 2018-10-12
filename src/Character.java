@@ -1,5 +1,9 @@
 import java.util.Arrays;
 
+
+
+
+
 public class Character {
 
         FightingOptions  fightingOptions;
@@ -68,6 +72,13 @@ public class Character {
         {
             return clothingOptions;
         }
+
+        public void setAttack(FightingOptions fight)
+
+        {
+            fightingOptions = fight;
+        }
+
 
         public void attackEnemy()
         {
