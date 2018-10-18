@@ -8,6 +8,7 @@ public abstract class Character {
 
         FightingOptions  fightingOptions;
 
+
         String name;
         double health;
         String[] attackOptions;
@@ -84,8 +85,6 @@ public abstract class Character {
         {
             fightingOptions.attack();
         }
-
-
 
 
         public String toString()
