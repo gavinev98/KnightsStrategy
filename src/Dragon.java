@@ -1,7 +1,4 @@
-import java.rmi.activation.ActivationGroup_Stub;
-import java.util.Arrays;
-
-public class Dragon extends Character implements Cosmetics,  IsAlive {
+public class Dragon extends Character implements CharacterType,  IsAlive {
 
 
     public Dragon(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
@@ -19,7 +16,7 @@ public class Dragon extends Character implements Cosmetics,  IsAlive {
 
 
     @Override
-    public String clothingOption() {
-        return "Warrior has blue hair";
+    public void clothingOption() {
+        System.out.println("Dragon Details:");
     }
 }
