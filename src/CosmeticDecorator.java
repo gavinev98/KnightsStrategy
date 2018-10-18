@@ -1,14 +1,14 @@
-public abstract class CosmeticDecorator implements Cosmetics {
+public abstract class CosmeticDecorator implements CharacterType {
 
-     Cosmetics cosmo;
+     CharacterType cosmo;
 
-     public CosmeticDecorator(Cosmetics cosmo)
+     public CosmeticDecorator(CharacterType cosmo)
      {
          this.cosmo = cosmo;
      }
 
     @Override
-    public String clothingOption() {
-        return cosmo.clothingOption();
+    public void clothingOption() {
+        cosmo.clothingOption();
     }
 }
