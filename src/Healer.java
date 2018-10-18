@@ -1,6 +1,4 @@
-import java.util.Arrays;
-
-public class Healer extends Character implements Cosmetics,  IsAlive {
+public class Healer extends Character implements CharacterType,  IsAlive {
 
 
     public Healer(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
@@ -17,7 +15,7 @@ public class Healer extends Character implements Cosmetics,  IsAlive {
 
 
     @Override
-    public String clothingOption() {
-        return "Warrior has blue hair";
+    public void clothingOption() {
+        System.out.println("Healer Hair Color :");
     }
 }
