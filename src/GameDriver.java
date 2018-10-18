@@ -45,32 +45,27 @@ public class GameDriver {
 /* Using Factory Pattern here */
         Scanner input = new Scanner(System.in);
 
-        Character type = null;
+        CharacterFactory type = new CharacterFactory();
 
-        String characterOptions = "";
+        Character typeOfCharacter = null;
 
-        System.out.print("What type of character do you want to create T for Troll or D for Dragon.");
+        System.out.print("What type of character would you like to create ? T(Troll) or D(Dragon):");
 
-        //* Take in value from command line.
         if(input.hasNextLine())
         {
-            characterOptions = input.nextLine();
+            String character = input.nextLine();
 
+            typeOfCharacter = type.createCharacter(character);
         }
 
-        //*Check what value was entered */
-
-        if(characterOptions.equals("T"))
-
+        if(typeOfCharacter != null)
         {
-            type = new Troll(name,health,attackOptions,specialAbility,clothingOptions);
+            // I will create methods here for attacking etc..
         }
-
-        else if(characterOptions.equals("D"))
+        else
         {
-            type = new Dragon(name,health,attackOptions,specialAbility,clothingOptions);
+            System.out.print("Error character not specified!");
         }
-
 
     }
 
