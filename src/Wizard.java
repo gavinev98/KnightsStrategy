@@ -1,6 +1,4 @@
-import java.util.Arrays;
-
-public class Wizard extends Character implements Cosmetics, IsAlive {
+public class Wizard extends Character implements CharacterType, IsAlive {
 
     public Wizard(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
         super(name, health, attackOptions, specialAbility, clothingOptions);
@@ -14,7 +12,7 @@ public class Wizard extends Character implements Cosmetics, IsAlive {
 
 
     @Override
-    public String clothingOption() {
-        return "Warrior has blue hair";
+    public void clothingOption() {
+        System.out.println("Wizard Hair Color:");
     }
 }
