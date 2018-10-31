@@ -1,34 +1,31 @@
-import com.sun.org.apache.bcel.internal.generic.DREM;
-
 import java.util.Scanner;
 public class GameDriver {
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
 
 
         String name = "Gavin";
         double health = 100;
-        String[] attackOptions = { "Rage Spell"};
-        String[] specialAbility = { "Cold Spell"};
+        String[] attackOptions = {"Rage Spell"};
+        String[] specialAbility = {"Cold Spell"};
         String[] clothingOptions = {"Blue Hair"};
 
         String name1 = "John";
         double health1 = 67;
-        String[] attackOptions1 = { "Rage Spell"};
-        String[] specialAbility1 = { "Cold Spell"};
+        String[] attackOptions1 = {"Rage Spell"};
+        String[] specialAbility1 = {"Cold Spell"};
         String[] clothingOptions1 = {"Blue Hair"};
 
-/* Using strategy Pattern here */
+        /* Using strategy Pattern here */
         System.out.println("Dragon Details");
-        Dragon w1 = new Dragon( name, health, attackOptions, specialAbility, clothingOptions);
+        Dragon w1 = new Dragon(name, health, attackOptions, specialAbility, clothingOptions);
 
         System.out.println("Name :" + w1.getName());
         System.out.println("Special Attack");
         w1.attackEnemy();
         System.out.println("Health :" + w1.getHealth());
 
-/*Using Decorator Pattern here */
+        /*Using Decorator Pattern here */
         System.out.println("-------------------");
         //Applying blue hair to our character.
         CharacterType blueHairedTroll = new BlueHairDecorator(new Troll(name1, health1, attackOptions1, specialAbility1, clothingOptions1));
@@ -42,7 +39,7 @@ public class GameDriver {
 
 
 
-/* Using Factory Pattern here */
+        /* Using Factory Pattern here */
         Scanner input = new Scanner(System.in);
 
         CharacterFactory type = new CharacterFactory();
@@ -51,23 +48,39 @@ public class GameDriver {
 
         System.out.print("What type of character would you like to create ? T(Troll) or D(Dragon):");
 
-        if(input.hasNextLine())
-        {
+        if (input.hasNextLine()) {
             String character = input.nextLine();
 
             typeOfCharacter = type.createCharacter(character);
         }
 
-        if(typeOfCharacter != null)
-        {
+        if (typeOfCharacter != null) {
             // I will create methods here for attacking etc..
-        }
-        else
-        {
+        } else {
             System.out.print("Error character not specified!");
         }
 
+
+
+        /* Using Factory Pattern here */
+
+
+        /* Using Observer Pattern here */
+
+        CharacterData c1 = new CharacterData();
+
+        //creating observer that will be sent updates from subject
+
+        // passing in subj so i will be able to access the methods of concrete subject.
+        GameSoundObserver obs1 = new GameSoundObserver(c1);
+
+        c1.setMaxscore(100);
+
+
     }
 
-    /* Using Factory Pattern here */
+
+    /* Using Observer Pattern here */
+
+
 }

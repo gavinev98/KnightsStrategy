@@ -18,4 +18,7 @@ public class Healer extends Character implements CharacterType,  IsAlive {
     public void clothingOption() {
         System.out.println("Healer Hair Color :");
     }
+
+
+
 }
