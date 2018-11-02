@@ -65,22 +65,30 @@ public class GameDriver {
         /* Using Factory Pattern here */
 
 
+
         /* Using Observer Pattern here */
 
-        CharacterData c1 = new CharacterData();
+        // Creating a new Character
+        Character obscharacter = new Dragon(name,health,attackOptions,specialAbility,clothingOptions);
 
-        //creating observer that will be sent updates from subject
+        // Creating the Game Sound Observer to Listen if the health is less than 0.
+        GameSoundObserver soundObserver1 = new GameSoundObserver(obscharacter);
 
-        // passing in subj so i will be able to access the methods of concrete subject.
-        GameSoundObserver obs1 = new GameSoundObserver(c1);
+        obscharacter.setHealth(1);
 
-        c1.setMaxscore(100);
+
+
+
+
+        /* Observer Pattern ends here */
 
 
     }
 
 
-    /* Using Observer Pattern here */
+
+
+
 
 
 }
