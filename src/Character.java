@@ -1,10 +1,11 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Observable;
 import java.util.Observer;
 
 
-public  class Character implements Subject {
+public  class Character extends Observable {
 
     FightingOptions fightingOptions;
     private ArrayList<Observer> observers;
@@ -22,17 +23,18 @@ public  class Character implements Subject {
         this.attackOptions = attackOptions;
         this.specialAbility = specialAbility;
         this.clothingOptions = clothingOptions;
+        setChanged(); // Adding setChanged Method in parallel with the built in java observer.
         observers = new ArrayList<Observer>();
     }
 
     public void setName(String name) {
 
         this.name = name;
-        notifyObserver();
     }
 
     public void setHealth(double health) {
         this.health = health;
+        nameChanged();
     }
 
     public void setAttackOptions(String[] attackOptions) {
@@ -76,34 +78,15 @@ public  class Character implements Subject {
         fightingOptions.attack();
     }
 
+    public void nameChanged()
+    {
+        setChanged();
+        notifyObservers();
+    }
+
 
     public String toString() {
         return "Name" + getName() + "Health" + getHealth() + "Attack Options" + Arrays.toString(attackOptions) + "Special Ability" + Arrays.toString(specialAbility) + "Clothing Options" + Arrays.toString(clothingOptions);
     }
-
-    @Override
-    public void register(Observer o) {
-        observers.add(o);
-    }
-
-    @Override
-    public void unregister(Observer o) {
-        int observerIndex = observers.indexOf(o);
-
-        observers.remove(observerIndex);
-    }
-
-
-
-    @Override
-    public void notifyObserver() {
-
-        for (Observer o : observers) {
-            o.update(name);
-
-        }
-    }
-
-
 
 }
