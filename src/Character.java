@@ -1,10 +1,10 @@
-import java.io.CharConversionException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Observer;
 
 
-public class Character implements Subject {
+public  class Character implements Subject {
 
     FightingOptions fightingOptions;
     private ArrayList<Observer> observers;
@@ -26,7 +26,9 @@ public class Character implements Subject {
     }
 
     public void setName(String name) {
+
         this.name = name;
+        notifyObserver();
     }
 
     public void setHealth(double health) {
@@ -84,7 +86,6 @@ public class Character implements Subject {
         observers.add(o);
     }
 
-
     @Override
     public void unregister(Observer o) {
         int observerIndex = observers.indexOf(o);
@@ -98,9 +99,11 @@ public class Character implements Subject {
     public void notifyObserver() {
 
         for (Observer o : observers) {
-            o.update(this);
+            o.update(name);
 
         }
     }
+
+
 
 }
