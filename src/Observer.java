@@ -1,4 +1,4 @@
 public interface Observer {
 
-        public void update(Object obs);
+        public void update(String name);
 }
