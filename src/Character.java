@@ -5,8 +5,9 @@ import java.util.Observable;
 import java.util.Observer;
 
 
-public  class Character extends Observable {
+public class Character implements Subject {
 
+    // Using Composition to take in FightingOptions.
     FightingOptions fightingOptions;
     private ArrayList<Observer> observers;
 
@@ -23,7 +24,6 @@ public  class Character extends Observable {
         this.attackOptions = attackOptions;
         this.specialAbility = specialAbility;
         this.clothingOptions = clothingOptions;
-       setChanged(); // Adding setChanged Method in parallel with the built in java observer.
         observers = new ArrayList<Observer>();
     }
 
@@ -34,7 +34,9 @@ public  class Character extends Observable {
 
     public void setHealth(double health) {
         this.health = health;
-        nameChanged();
+        //Calling healthChanged method when the health changes to notify the observer.
+        healthChanged();
+
     }
 
     public void setAttackOptions(String[] attackOptions) {
@@ -78,15 +80,39 @@ public  class Character extends Observable {
         fightingOptions.attack();
     }
 
-    public void nameChanged()
+    public void healthChanged()
     {
-        setChanged();
-        notifyObservers();
+        notifyObserver();
     }
+
 
 
     public String toString() {
         return "Name" + getName() + "Health" + getHealth() + "Attack Options" + Arrays.toString(attackOptions) + "Special Ability" + Arrays.toString(specialAbility) + "Clothing Options" + Arrays.toString(clothingOptions);
     }
 
+
+    @Override
+    public void register(Observer obs) {
+        observers.add(obs);
+    }
+
+    @Override
+    public void unregister(Observer obs) {
+
+        int i = observers.indexOf(obs);
+        if(i >= 0){
+            observers.remove(i);
+        }
+
+    }
+
+    @Override
+    public void notifyObserver() {
+
+        for(int i = 0; i < observers.size(); i++) {
+            Observer observer = (Observer)observers.get(i);
+            observer.update();
+        }
+    }
 }
