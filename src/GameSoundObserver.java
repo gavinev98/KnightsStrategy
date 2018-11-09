@@ -19,7 +19,7 @@ public class GameSoundObserver implements Observer{
         this.concreteSubject = concreteSubject;
 
         // add to concrete subjects arraylist.
-        concreteSubject.register(this);
+        concreteSubject.register( this);
     }
 
 
