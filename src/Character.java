@@ -23,7 +23,7 @@ public  class Character extends Observable {
         this.attackOptions = attackOptions;
         this.specialAbility = specialAbility;
         this.clothingOptions = clothingOptions;
-        setChanged(); // Adding setChanged Method in parallel with the built in java observer.
+       setChanged(); // Adding setChanged Method in parallel with the built in java observer.
         observers = new ArrayList<Observer>();
     }
 
