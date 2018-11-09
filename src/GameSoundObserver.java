@@ -14,10 +14,6 @@ public class GameSoundObserver implements Observer{
 
     Observable observable;
 
-    //Access to this to be able to use different methods using dependency injection. we need to have this to register objects in here.
-    private Subject concreteSubject;
-
-
     // creating constructor using dependency injection and registering the GameSound Observer.
     public GameSoundObserver(Observable observable)
     {
@@ -55,12 +51,11 @@ public class GameSoundObserver implements Observer{
         {
             Character character1 = (Character)observer;
             double dragonsHealth = character1.getHealth();
-            if(dragonsHealth < 0)
-            {
+            if(dragonsHealth < 0) {
                 characterHealth();
             }
-            else {
-                System.out.println("Your Character is still alive");
+           else {
+               System.out.println("Your character is still alive");
             }
         }
     }
