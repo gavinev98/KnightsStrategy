@@ -1,8 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Observable;
-import java.util.Observer;
+
 
 
 public class Character implements Subject {
@@ -93,9 +92,10 @@ public class Character implements Subject {
 
 
     @Override
-    public void register(Observer obs) {
-        observers.add(obs);
+    public void register(Observer o) {
+        observers.add(o);
     }
+
 
     @Override
     public void unregister(Observer obs) {
@@ -107,12 +107,13 @@ public class Character implements Subject {
 
     }
 
+    // Notify all observers when the characters health goes below 0.
     @Override
     public void notifyObserver() {
 
         for(int i = 0; i < observers.size(); i++) {
             Observer observer = (Observer)observers.get(i);
-            observer.update();
+            observer.update(health);
         }
     }
 }
