@@ -1,4 +1,3 @@
-import java.util.Observer;
 
 public interface Subject {
         //Register observer
