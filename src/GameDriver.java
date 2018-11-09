@@ -74,7 +74,7 @@ public class GameDriver {
         // Creating the Game Sound Observer to Listen if the health is less than 0.
         GameSoundObserver soundObserver1 = new GameSoundObserver(obscharacter);
 
-        obscharacter.setHealth(1);
+        obscharacter.setHealth(-1);
 
 
 
