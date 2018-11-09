@@ -4,23 +4,22 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 
-import java.util.Observable;
-import java.util.Observer;
+
 
 public class GameSoundObserver implements Observer{
 
     //creating boolean variable to play sound.
     private boolean isSoundPlaying = false;
 
-    Observable observable;
+    Subject concreteSubject;
 
     // creating constructor using dependency injection and registering the GameSound Observer.
-    public GameSoundObserver(Observable observable)
+    public GameSoundObserver(Subject concreteSubject)
     {
-        this.observable = observable;
+        this.concreteSubject = concreteSubject;
 
         // add to concrete subjects arraylist.
-        observable.addObserver(this);
+        concreteSubject.register(this);
     }
 
 
@@ -43,20 +42,22 @@ public class GameSoundObserver implements Observer{
         isSoundPlaying = true;
     }
 
-    // The goal of this update method is to play music when dragon is entered as the name.
     @Override
-    public void update(Observable observer, Object arg) {
+    public void update(double obs) {
 
-        if(observer instanceof Character)
-        {
-            Character character1 = (Character)observer;
-            double dragonsHealth = character1.getHealth();
+
+            double dragonsHealth = obs;
             if(dragonsHealth < 0) {
                 characterHealth();
             }
-           else {
-               System.out.println("Your character is still alive");
+            else {
+                System.out.println("Your character is still alive");
             }
         }
-    }
+
+
+
+
+    // The goal of this update method is to play music when dragon is entered as the name.
+
 }
