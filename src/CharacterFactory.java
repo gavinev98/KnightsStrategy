@@ -19,12 +19,12 @@ public class CharacterFactory {
 
             if(characterType.equals("T"))
             {
-                return new Troll(name1,health1,attackOptions1,specialAbility1,clothingOptions1);
+                return new Troll(name1,health1,attackOptions1,specialAbility1,clothingOptions1, new HitAndRunMethod());
             }
             else
                 if(characterType.equals("D"))
                 {
-                    return new Dragon(name2,health2,attackOptions2,specialAbility2,clothingOptions2);
+                    return new Dragon(name2,health2,attackOptions2,specialAbility2,clothingOptions2, new HitAndRunMethod());
                 }
                 else
                 return null;
