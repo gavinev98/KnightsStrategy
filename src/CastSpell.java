@@ -1,6 +1,8 @@
 public class CastSpell implements FightingOptions {
+
+
     @Override
     public void attack() {
-        System.out.println("Cast Spell");
+        System.out.println("Using the Casting Spell");
     }
 }
