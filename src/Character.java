@@ -8,6 +8,11 @@ public class Character implements Subject {
 
     // Using Composition to take in FightingOptions.
     FightingOptions fightingOptions;
+
+    //Using composition to implement stealing methods
+    LootMethod methods;
+
+    //Arraylist used for storing observers.
     private ArrayList<Observer> observers;
 
 
@@ -17,12 +22,13 @@ public class Character implements Subject {
     String[] specialAbility;
     String[] clothingOptions;
 
-    public Character(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
+    public Character(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions, LootMethod methods) {
         this.name = name;
         this.health = health;
         this.attackOptions = attackOptions;
         this.specialAbility = specialAbility;
         this.clothingOptions = clothingOptions;
+        this.methods = methods;
         observers = new ArrayList<Observer>();
     }
 
@@ -84,6 +90,11 @@ public class Character implements Subject {
         notifyObserver();
     }
 
+    //Method used to steal.
+    public void steal()
+    {
+        methods.Loot();
+    }
 
 
     public String toString() {
