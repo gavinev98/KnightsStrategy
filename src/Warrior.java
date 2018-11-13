@@ -1,8 +1,8 @@
 public class Warrior extends Character implements CharacterType,  IsAlive {
 
 
-    public Warrior(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
-        super(name, health, attackOptions, specialAbility, clothingOptions);
+    public Warrior(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions, LootMethod method) {
+        super(name, health, attackOptions, specialAbility, clothingOptions, method);
     }
 
 

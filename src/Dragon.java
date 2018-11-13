@@ -1,8 +1,8 @@
 public class Dragon extends Character implements CharacterType,  IsAlive {
 
 
-    public Dragon(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
-        super(name, health, attackOptions, specialAbility, clothingOptions);
+    public Dragon(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions, LootMethod method) {
+        super(name, health, attackOptions, specialAbility, clothingOptions, method);
         fightingOptions = new BreathFire();
     }
 

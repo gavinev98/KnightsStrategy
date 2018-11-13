@@ -1,8 +1,8 @@
 public class Healer extends Character implements CharacterType,  IsAlive {
 
 
-    public Healer(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions) {
-        super(name, health, attackOptions, specialAbility, clothingOptions);
+    public Healer(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions, LootMethod method) {
+        super(name, health, attackOptions, specialAbility, clothingOptions, method);
     }
 
 
