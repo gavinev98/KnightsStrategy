@@ -1,130 +1,113 @@
 
+
+import TemplateMethod.LootMethod;
+
+
+
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 
 
 public class Character implements Subject {
-
-    // Using Composition to take in FightingOptions.
     FightingOptions fightingOptions;
-
-    //Using composition to implement stealing methods
     LootMethod methods;
-
-    //Arraylist used for storing observers.
     private ArrayList<Observer> observers;
-
-
     String name;
     double health;
-    String[] attackOptions;
-    String[] specialAbility;
-    String[] clothingOptions;
+    String attackOptions;
+    String specialAbility;
+    String clothingOptions;
 
-    public Character(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions, LootMethod methods) {
+    public Character(String name, double health, String attackOptions, String specialAbility, String clothingOptions, LootMethod methods) {
         this.name = name;
         this.health = health;
         this.attackOptions = attackOptions;
         this.specialAbility = specialAbility;
         this.clothingOptions = clothingOptions;
         this.methods = methods;
-        observers = new ArrayList<Observer>();
+        this.observers = new ArrayList();
     }
 
     public void setName(String name) {
-
         this.name = name;
     }
 
     public void setHealth(double health) {
         this.health = health;
-        //Calling healthChanged method when the health changes to notify the observer.
-        healthChanged();
-
+        this.healthChanged();
     }
 
-    public void setAttackOptions(String[] attackOptions) {
+    public void setAttackOptions(String attackOptions) {
         this.attackOptions = attackOptions;
     }
 
-    public void setSpecialAbility(String[] specialAbility) {
+    public void setSpecialAbility(String specialAbility) {
         this.specialAbility = specialAbility;
     }
 
-    public void setClothingOptions(String[] clothingOptions) {
+    public void setClothingOptions(String clothingOptions) {
         this.clothingOptions = clothingOptions;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public double getHealth() {
-        return health;
+        return this.health;
     }
 
-    public String[] getAttackOptions() {
-        return attackOptions;
+    public String getAttackOptions() {
+        return this.attackOptions;
     }
 
-    public String[] getSpecialAbility() {
-        return specialAbility;
+    public String getSpecialAbility() {
+        return this.specialAbility;
     }
 
-    public String[] getClothingOptions() {
-        return clothingOptions;
+    public String getClothingOptions() {
+        return this.clothingOptions;
     }
 
     public void setAttack(FightingOptions fight) {
-        fightingOptions = fight;
+        this.fightingOptions = fight;
     }
-
 
     public void attackEnemy() {
-        fightingOptions.attack();
+        this.fightingOptions.attack();
     }
 
-    public void healthChanged()
-    {
-        notifyObserver();
+    public void healthChanged() {
+        this.notifyObserver();
     }
 
-    //Method used to steal.
-    public void steal()
-    {
-        methods.Loot();
+    public void steal() {
+        this.methods.Loot();
     }
-
 
     public String toString() {
-        return "Name" + getName() + "Health" + getHealth() + "Attack Options" + Arrays.toString(attackOptions) + "Special Ability" + Arrays.toString(specialAbility) + "Clothing Options" + Arrays.toString(clothingOptions);
+        return "Name" + this.getName() + "Health" + this.getHealth() + "Attack Options" + this.getAttackOptions() + "Special Ability" + this.getSpecialAbility() + "Clothing Options" + this.getClothingOptions();
     }
 
-
-    @Override
     public void register(Observer o) {
-        observers.add(o);
+        this.observers.add(o);
     }
 
-
-    @Override
     public void unregister(Observer obs) {
-
-        int i = observers.indexOf(obs);
-        if(i >= 0){
-            observers.remove(i);
+        int i = this.observers.indexOf(obs);
+        if (i >= 0) {
+            this.observers.remove(i);
         }
 
     }
 
-    // Notify all observers when the characters health goes below 0.
-    @Override
     public void notifyObserver() {
-
-        for(int i = 0; i < observers.size(); i++) {
-            Observer observer = (Observer)observers.get(i);
-            observer.update(health);
+        for(int i = 0; i < this.observers.size(); ++i) {
+            Observer observer = (Observer)this.observers.get(i);
+            observer.update(this.health);
         }
+
     }
 }
+
