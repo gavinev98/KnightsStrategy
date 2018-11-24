@@ -20,17 +20,17 @@ public class GameDriver {
         String clothingOptions1 = "Blue Hair";
 
         /* Using strategy Pattern here */
-
+/*
         System.out.println("Dragon Details");
         Dragon w1 = new Dragon(name, health, attackOptions, specialAbility, clothingOptions, new HitAndRunMethod());
         System.out.println("Name :" + w1.getName());
         w1.attackEnemy();
         System.out.println("Health :" + w1.getHealth());
-       /* **********************************/
+        /* **********************************/
 
 
         /*Using Decorator Pattern here */
-
+/*(
         System.out.println("-------------------");
         System.out.println("Decorator Pattern");
         //Applying blue hair to our character.
@@ -51,6 +51,7 @@ public class GameDriver {
         System.out.println("Factory Pattern");
         Scanner input = new Scanner(System.in);
 
+
         CharacterFactory type = new CharacterFactory(new SimpleCharacterFactory());
 
         Character typeOfCharacter = null;
@@ -61,8 +62,6 @@ public class GameDriver {
         String nameOfChar = input.nextLine();
         System.out.print("What health do you want to give your character:");
         double healthval = Double.parseDouble(input.nextLine());
-        System.out.print("What attack options do you want to give your character:");
-        String attkOptions = input.nextLine();
         System.out.print("What special abilities do you need?");
         String specials = input.nextLine();
         System.out.print("What Clothing options do you want to wear");
@@ -71,7 +70,7 @@ public class GameDriver {
         if (input.hasNextLine()) {
 
 
-            typeOfCharacter = type.createCharacter(typeofchar, nameOfChar, healthval, attkOptions, specials, clothingopts);
+            typeOfCharacter = type.createCharacter(typeofchar, nameOfChar, healthval,attackOptions, specials, clothingopts);
 
 
         }
@@ -79,7 +78,34 @@ public class GameDriver {
         if (typeOfCharacter != null) {
             // I will create methods here for adding blue hair / using stealing methods / loosing health for observer etc.
 
+            //Observer for my game monitoring health.
+            GameSoundObserver soundObserver1 = new GameSoundObserver(typeOfCharacter);
+
             System.out.println("Character sucessfully created");
+
+            System.out.print("There is a wizard nearby do you wish to perform a hit and run");
+                typeOfCharacter.steal();
+
+
+                System.out.println("You have been caught and the wizard has hit you with a spell!!");
+                //Showing off the use of the observer. Once the health gets updated it will notify and observer and will output message of character status.
+                typeOfCharacter.setHealth(50);
+                System.out.println("Your health is pretty low get to cover :" + typeOfCharacter.getHealth());
+
+
+    }
+
+
+
+
+
+
+    /*ToDO implement attack , blue hair.
+
+
+
+/*
+
 
 
             System.out.println("Welcome to the command line fighting game !");
@@ -87,24 +113,18 @@ public class GameDriver {
             System.out.println("Here are your players details");
 
             System.out.println("Name :" + typeOfCharacter.getName());
-            System.out.println("Health" + typeOfCharacter.getHealth());
-            System.out.println("Clothing Options" + typeOfCharacter.getClothingOptions());
-            System.out.println("Attacking Options" + typeOfCharacter.getAttackOptions());
-            System.out.println("Special Ability" + typeOfCharacter.getSpecialAbility());
-            System.out.println("Your powerup cant be changed and is HitAndRun");
+            System.out.println("Health :" + typeOfCharacter.getHealth());
+            System.out.println("Clothing Options :" + typeOfCharacter.getClothingOptions());
+            System.out.println("Attacking Options :" + typeOfCharacter.getAttackOptions());
+            System.out.println("Special Ability :" + typeOfCharacter.getSpecialAbility());
+            System.out.println("Your Powerup is a HitAndRun");
 
-            System.out.println("Would you like to decorate your character?");
-            String yorn = input.nextLine();
 
-            if(yorn.equals("Y"))
-            {
-                typeOfCharacter = new BlueHairDecorator(typeOfCharacter);
-                System.out.println("Cosmestic of blue hair applied" + typeOfCharacter.clothingOption();
-            }
-            else
-            {
 
-            }
+
+
+
+
 
 
 
@@ -119,8 +139,8 @@ public class GameDriver {
 
 
 
-        /* Using Observer Pattern here */
-
+            /* Using Observer Pattern here */
+/*
         System.out.println("-------------------");
         System.out.println("Observer Pattern");
 
@@ -144,8 +164,8 @@ public class GameDriver {
 
 
 
-        /* Using the Template method here */
-
+            /* Using the Template method here */
+/*
 
         System.out.println("-------------------");
         System.out.println("Template Method");
@@ -158,13 +178,8 @@ public class GameDriver {
         /* End of the Template Method. */
 
 
+        }
+
 
     }
 
-
-
-
-
-
-
-}
