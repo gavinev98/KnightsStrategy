@@ -1,6 +1,6 @@
 public class TrollSword implements FightingOptions {
     @Override
     public void attack() {
-        System.out.println("Troll Sword");
+        System.out.println("Attacking enemy with a Sword....");
     }
 }
