@@ -89,8 +89,12 @@ public class GameDriver {
 
                 System.out.println("You have been caught and the wizard has hit you with a spell!!");
                 //Showing off the use of the observer. Once the health gets updated it will notify and observer and will output message of character status.
-                typeOfCharacter.setHealth(50);
+                 typeOfCharacter.setHealth(50);
                 System.out.println("Your health is pretty low get to cover :" + typeOfCharacter.getHealth());
+
+                System.out.println("*bandages up and tries to identify location of wizard");
+                System.out.println("Wizard spotted engaging!");
+                typeOfCharacter.attackEnemy();
 
 
     }
