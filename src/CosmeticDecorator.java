@@ -1,8 +1,8 @@
-public abstract class CosmeticDecorator implements CharacterType {
+public abstract class CosmeticDecorator implements CharacterClothing {
 
-     CharacterType cosmo;
+     CharacterClothing cosmo;
 
-     public CosmeticDecorator(CharacterType cosmo)
+     public CosmeticDecorator(CharacterClothing cosmo)
      {
          this.cosmo = cosmo;
      }
