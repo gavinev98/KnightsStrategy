@@ -1,7 +1,9 @@
-public class Healer extends Character implements CharacterType,  IsAlive {
+import TemplateMethod.LootMethod;
+
+public class Healer extends Character implements CharacterClothing,  IsAlive {
 
 
-    public Healer(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions, LootMethod method) {
+    public Healer(String name, double health, String attackOptions, String specialAbility, String clothingOptions, LootMethod method) {
         super(name, health, attackOptions, specialAbility, clothingOptions, method);
     }
 
