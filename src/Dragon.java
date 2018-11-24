@@ -4,7 +4,7 @@ import TemplateMethod.LootMethod;
 public class Dragon extends Character  implements CharacterClothing,  IsAlive {
 
 
-    FightingOptions fightingOptions;
+
 
     public Dragon(String name, double health, String attackOptions, String specialAbility, String clothingOptions, LootMethod method) {
         super(name, health, attackOptions, specialAbility, clothingOptions, method);
