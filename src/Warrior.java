@@ -1,8 +1,10 @@
-public class Warrior extends Character implements CharacterType,  IsAlive {
+import TemplateMethod.LootMethod;
+
+public class Warrior extends Character implements CharacterClothing,  IsAlive {
 
 
-    public Warrior(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions, LootMethod method) {
-        super(name, health, attackOptions, specialAbility, clothingOptions, method);
+    public Warrior(String name, double health, String attackOptions, String specialAbility, String clothingOptions, LootMethod method) {
+            super(name, health, attackOptions, specialAbility, clothingOptions, method);
     }
 
 
@@ -16,6 +18,6 @@ public class Warrior extends Character implements CharacterType,  IsAlive {
 
     @Override
     public void clothingOption() {
-        System.out.println("Warrior Hair Color:");
+        System.out.println("Hair Color:");
     }
 }

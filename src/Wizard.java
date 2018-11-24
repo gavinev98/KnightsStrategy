@@ -1,6 +1,8 @@
-public class Wizard extends Character implements CharacterType, IsAlive {
+import TemplateMethod.LootMethod;
 
-    public Wizard(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions, LootMethod methods) {
+public class Wizard extends Character  implements CharacterClothing, IsAlive {
+
+    public Wizard(String name, double health, String attackOptions, String specialAbility, String clothingOptions, LootMethod methods) {
         super(name, health, attackOptions, specialAbility, clothingOptions, methods);
     }
 
@@ -13,7 +15,7 @@ public class Wizard extends Character implements CharacterType, IsAlive {
 
     @Override
     public void clothingOption() {
-        System.out.println("Wizard Hair Color:");
+        System.out.println("Hair Color:");
     }
 
 

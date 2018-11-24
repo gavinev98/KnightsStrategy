@@ -1,7 +1,9 @@
-public class Troll extends Character implements CharacterType,  IsAlive {
+import TemplateMethod.LootMethod;
+
+public class Troll extends Character implements CharacterClothing,  IsAlive {
 
 
-    public Troll(String name, double health, String[] attackOptions, String[] specialAbility, String[] clothingOptions, LootMethod method) {
+    public Troll(String name, double health, String attackOptions, String specialAbility, String clothingOptions, LootMethod method) {
         super(name, health, attackOptions, specialAbility, clothingOptions, method);
     }
 
@@ -16,6 +18,6 @@ public class Troll extends Character implements CharacterType,  IsAlive {
 
     @Override
     public void clothingOption() {
-        System.out.println("Troll Hair Color :");
+        System.out.println("Hair Color:");
     }
 }
