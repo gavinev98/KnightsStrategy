@@ -3,7 +3,7 @@ import TemplateMethod.LootMethod;
 
 public class Dragon extends Character  implements CharacterClothing,  IsAlive {
 
-    LootMethod loot;
+
     FightingOptions fightingOptions;
 
     public Dragon(String name, double health, String attackOptions, String specialAbility, String clothingOptions, LootMethod method) {
@@ -18,10 +18,6 @@ public class Dragon extends Character  implements CharacterClothing,  IsAlive {
         fightingOptions.attack();
     }
 
-    public void steal()
-    {
-        loot.Loot();
-    }
 
     @Override
     public boolean isAlive() {
