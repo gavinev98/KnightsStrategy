@@ -10,8 +10,10 @@ import java.util.ArrayList;
 
 
 public class Character implements Subject {
+
     FightingOptions fightingOptions;
     LootMethod methods;
+
     private ArrayList<Observer> observers;
     String name;
     double health;
@@ -29,25 +31,10 @@ public class Character implements Subject {
         this.observers = new ArrayList();
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void setHealth(double health) {
         this.health = health;
         this.healthChanged();
-    }
-
-    public void setAttackOptions(String attackOptions) {
-        this.attackOptions = attackOptions;
-    }
-
-    public void setSpecialAbility(String specialAbility) {
-        this.specialAbility = specialAbility;
-    }
-
-    public void setClothingOptions(String clothingOptions) {
-        this.clothingOptions = clothingOptions;
     }
 
     public String getName() {
@@ -56,10 +43,6 @@ public class Character implements Subject {
 
     public double getHealth() {
         return this.health;
-    }
-
-    public String getAttackOptions() {
-        return this.attackOptions;
     }
 
     public String getSpecialAbility() {
@@ -87,7 +70,7 @@ public class Character implements Subject {
     }
 
     public String toString() {
-        return "Name" + this.getName() + "Health" + this.getHealth() + "Attack Options" + this.getAttackOptions() + "Special Ability" + this.getSpecialAbility() + "Clothing Options" + this.getClothingOptions();
+        return "Name" + this.getName() + "Health" + this.getHealth() + "Special Ability" + this.getSpecialAbility() + "Clothing Options" + this.getClothingOptions();
     }
 
     public void register(Observer o) {
