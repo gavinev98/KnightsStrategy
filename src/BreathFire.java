@@ -3,7 +3,7 @@ public class BreathFire implements FightingOptions {
 
     @Override
     public void attack() {
-      System.out.println("Breaths Fire");
+      System.out.println("Special Ability Used: Breathing Fire");
     }
 
 
