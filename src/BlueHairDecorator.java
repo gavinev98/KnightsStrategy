@@ -1,6 +1,6 @@
 public class BlueHairDecorator extends CosmeticDecorator {
 
-    public BlueHairDecorator(CharacterType cosmos)
+    public BlueHairDecorator(CharacterClothing cosmos)
     {
         super(cosmos);
 
@@ -13,7 +13,7 @@ public class BlueHairDecorator extends CosmeticDecorator {
 
     }
 
-    private void applyBlueHair(CharacterType cosmo)
+    private void applyBlueHair(CharacterClothing cosmo)
     {
         System.out.println("Blue Hair");
     }
