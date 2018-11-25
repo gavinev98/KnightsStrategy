@@ -1,11 +1,14 @@
 
 
 
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 
-import java.io.File;
+import sun.audio.AudioData;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import sun.audio.ContinuousAudioDataStream;
 
+
+import java.io.FileInputStream;
 
 
 public class GameSoundObserver implements Observer{
@@ -25,32 +28,32 @@ public class GameSoundObserver implements Observer{
     }
 
 
-    public void characterHealth()
+    public static void characterHealth(String filepath)
     {
         System.out.println("Your Character has died");
 
         try
         {
-            String bip = "C:/Users/Gavin Everett/Downloads/dragon.mp3";
-            Media hit = new Media(new File(bip).toURI().toString());
-            MediaPlayer mediaPlayer = new MediaPlayer(hit);
-            mediaPlayer.play();
+            AudioData data = new AudioStream(new FileInputStream(filepath)).getData();
+            ContinuousAudioDataStream sound = new ContinuousAudioDataStream(data);
+            AudioPlayer.player.start(sound);
+
+
         }
         catch(Exception e)
         {
             System.out.println("Error Playing Music");
         }
 
-        isSoundPlaying = true;
     }
 
     @Override
     public void update(double obs) {
 
 
-            double dragonsHealth = obs;
-            if(dragonsHealth < 0) {
-                characterHealth();
+            double charHealth = obs;
+            if(charHealth <= 0) {
+                characterHealth("C:/Users/Gavin Everett/Desktop/KnightsStrategy/src/pacman_death.wav");
             }
             else {
                 System.out.println("Your character is still alive");
@@ -60,6 +63,6 @@ public class GameSoundObserver implements Observer{
 
 
 
-    // The goal of this update method is to play music when dragon is entered as the name.
+    // The goal of this update method is to play music when dragon is dead.
 
 }
