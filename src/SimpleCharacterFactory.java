@@ -1,5 +1,6 @@
 import TemplateMethod.HitAndRunMethod;
 import TemplateMethod.LootMethod;
+import TemplateMethod.UndercoverMethod;
 
 public class SimpleCharacterFactory {
 
@@ -17,7 +18,7 @@ public class SimpleCharacterFactory {
             else
                 if(characterType.equals("D"))
                 {
-                   type = new Dragon(name,health,attackotions,special,clothing, new HitAndRunMethod());
+                   type = new Dragon(name,health,attackotions,special,clothing, new UndercoverMethod());
                 }
 
                 return type;

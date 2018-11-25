@@ -4,6 +4,7 @@ public abstract class CosmeticDecorator implements CharacterClothing {
 
      public CosmeticDecorator(CharacterClothing cosmo)
      {
+
          this.cosmo = cosmo;
      }
 

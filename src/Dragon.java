@@ -14,9 +14,7 @@ public class Dragon extends Character  implements CharacterClothing,  IsAlive {
 
 
 
-    public void attackEnemy() {
-        fightingOptions.attack();
-    }
+
 
 
     @Override

@@ -48,7 +48,7 @@ public class GameDriver {
         /* Using Factory Pattern here */
 
         System.out.println("-------------------");
-        System.out.println("Factory Pattern");
+        System.out.println("Welcome to Command line Fighting game!");
         Scanner input = new Scanner(System.in);
 
 
@@ -83,6 +83,8 @@ public class GameDriver {
 
             System.out.println("Character sucessfully created");
 
+
+
             System.out.print("There is a wizard nearby do you wish to perform a hit and run");
                 typeOfCharacter.steal();
 
@@ -96,6 +98,22 @@ public class GameDriver {
                 System.out.println("Wizard spotted engaging!");
                 typeOfCharacter.attackEnemy();
 
+                System.out.println("Wizard has hit you again!!");
+                typeOfCharacter.setHealth(-1);
+
+
+                System.out.println("Game Over");
+
+
+                System.out.println("Do you wish to apply blue hair to your character ?");
+
+                CharacterClothing applyClothing = new BlueHairDecorator(typeOfCharacter);
+                applyClothing.clothingOption();
+
+
+
+
+
 
     }
 
@@ -104,7 +122,7 @@ public class GameDriver {
 
 
 
-    /*ToDO implement attack , blue hair.
+    /*ToDO implement attack , blue hair. also change pictures in document and update text.
 
 
 
