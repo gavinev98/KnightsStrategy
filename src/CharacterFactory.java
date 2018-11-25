@@ -1,35 +1,30 @@
+import TemplateMethod.LootMethod;
+
 public class CharacterFactory {
 
-        public Character createCharacter(String characterType)
-        {
-            String name1 = "Troll";
-            double health1 = 67;
-            String[] attackOptions1 = {"Looting"};
-            String[] specialAbility1 = {"Looting x2"};
-            String[] clothingOptions1 = {"Blue Hair"};
+    //Using Composition
+    SimpleCharacterFactory characterFactory;
 
-            String name2 = "Dragon";
-            double health2 = 67;
-            String[] attackOptions2 = {"Breath Fire"};
-            String[] specialAbility2 = {"Breath Fire x2"};
-            String[] clothingOptions2 = {"Blue Hair"};
+    public CharacterFactory(SimpleCharacterFactory characterFactory)
+    {
+        this.characterFactory = characterFactory;
+    }
 
-            Character type = null;
+    public Character createCharacter(String characterType, String name, double health, String attackotions,String special,String clothing)
+    {
+        Character character;
+
+        character = characterFactory.createCharacter(characterType,name,health,attackotions, special,clothing);
 
 
-            if(characterType.equals("T"))
-            {
-                return new Troll(name1,health1,attackOptions1,specialAbility1,clothingOptions1, new HitAndRunMethod());
-            }
-            else
-                if(characterType.equals("D"))
-                {
-                    return new Dragon(name2,health2,attackOptions2,specialAbility2,clothingOptions2, new HitAndRunMethod());
-                }
-                else
-                return null;
+
+        character.getName();
+        character.getHealth();
+        character.getClothingOptions();
+        character.getSpecialAbility();
 
 
-        }
 
+        return character;
+    }
 }

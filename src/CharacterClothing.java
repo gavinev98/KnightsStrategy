@@ -1,4 +1,4 @@
-public interface CharacterType {
+public interface CharacterClothing {
 
     public void clothingOption();
 }
