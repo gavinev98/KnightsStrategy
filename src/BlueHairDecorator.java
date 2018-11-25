@@ -8,15 +8,11 @@ public class BlueHairDecorator extends CosmeticDecorator {
 
     @Override
     public void clothingOption() {
-        cosmo.clothingOption();
-        applyBlueHair(cosmo);
+        super.clothingOption();
+        System.out.println("Blue Hair applied");
 
     }
 
-    private void applyBlueHair(CharacterClothing cosmo)
-    {
-        System.out.println("Blue Hair");
-    }
 
 
 }
