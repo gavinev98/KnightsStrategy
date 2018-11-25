@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 
 
-public class Character implements Subject {
+public  class Character implements Subject, CharacterClothing {
 
     FightingOptions fightingOptions;
     LootMethod methods;
@@ -20,6 +20,9 @@ public class Character implements Subject {
     String attackOptions;
     String specialAbility;
     String clothingOptions;
+
+
+
 
     public Character(String name, double health, String attackOptions, String specialAbility, String clothingOptions, LootMethod methods) {
         this.name = name;
@@ -57,13 +60,17 @@ public class Character implements Subject {
         this.fightingOptions = fight;
     }
 
+    //Attack enemy used for strategy.
     public void attackEnemy() {
         this.fightingOptions.attack();
     }
 
+    // HealthChanged Method to notify observers.
     public void healthChanged() {
         this.notifyObserver();
     }
+
+    //Stealing Method used with Template Method.
 
     public void steal() {
         this.methods.Loot();
@@ -73,10 +80,17 @@ public class Character implements Subject {
         return "Name" + this.getName() + "Health" + this.getHealth() + "Special Ability" + this.getSpecialAbility() + "Clothing Options" + this.getClothingOptions();
     }
 
+// This is for the decorator pattern. I was going to make it abstract instead of interface but complications arose.
+    @Override
+    public void clothingOption() {/* TODO */}
+
+
+    //Registering Observers
     public void register(Observer o) {
         this.observers.add(o);
     }
 
+    //Unregistering Observers
     public void unregister(Observer obs) {
         int i = this.observers.indexOf(obs);
         if (i >= 0) {
@@ -85,6 +99,7 @@ public class Character implements Subject {
 
     }
 
+    //Notifying Observers.
     public void notifyObserver() {
         for(int i = 0; i < this.observers.size(); ++i) {
             Observer observer = (Observer)this.observers.get(i);
@@ -92,5 +107,6 @@ public class Character implements Subject {
         }
 
     }
+
 }
 
