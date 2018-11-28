@@ -25,6 +25,11 @@ public  class Character implements Subject, CharacterClothing {
     String specialAbility;
     String clothingOptions;
 
+    String Idle = "Idle";
+    String Walking = "Walking";
+    String Running = "Running";
+
+        String state = Idle;
 
 
 
@@ -86,6 +91,23 @@ public  class Character implements Subject, CharacterClothing {
 // This is for the decorator pattern. I was going to make it abstract instead of interface but complications arose.
     @Override
     public void clothingOption() {/* TODO */}
+
+    public void currentState()
+    {
+        if(state == Idle)
+        {
+            System.out.println("Your character is currently idle");
+        }
+        else if(state == Running)
+        {
+            System.out.println("Your player is running");
+        }
+        else if(state == Walking)
+        {
+            System.out.println("Your player is walking");
+        }
+    }
+
 
 
     //Registering Observers
