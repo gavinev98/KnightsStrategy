@@ -1,4 +1,6 @@
-import TemplateMethod.LootMethod;
+package FactoryMethod;
+
+import Models.Character;
 
 public class CharacterFactory {
 
@@ -10,18 +12,18 @@ public class CharacterFactory {
         this.characterFactory = characterFactory;
     }
 
-    public Character createCharacter(String characterType, String name, double health, String attackotions,String special,String clothing)
+    public Character createCharacter(String characterType, String name, double health, String attackotions, String clothing)
     {
         Character character;
 
-        character = characterFactory.createCharacter(characterType,name,health,attackotions, special,clothing);
+        character = characterFactory.createCharacter(characterType,name,health,attackotions,clothing);
 
 
 
         character.getName();
         character.getHealth();
         character.getClothingOptions();
-        character.getSpecialAbility();
+
 
 
 

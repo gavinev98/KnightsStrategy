@@ -1,5 +1,9 @@
+package Models;
 
-
+import Observer.*;
+import Decorator.CharacterClothing;
+import Observer.Observer;
+import Strategy.FightingOptions;
 import TemplateMethod.LootMethod;
 
 
@@ -24,11 +28,10 @@ public  class Character implements Subject, CharacterClothing {
 
 
 
-    public Character(String name, double health, String attackOptions, String specialAbility, String clothingOptions, LootMethod methods) {
+    public Character(String name, double health, String attackOptions, String clothingOptions, LootMethod methods) {
         this.name = name;
         this.health = health;
         this.attackOptions = attackOptions;
-        this.specialAbility = specialAbility;
         this.clothingOptions = clothingOptions;
         this.methods = methods;
         this.observers = new ArrayList();

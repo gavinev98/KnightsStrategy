@@ -1,3 +1,4 @@
+package Observer;
 
 public interface Subject {
     //Register observer

@@ -1,3 +1,7 @@
+package Decorator;
+
+import Decorator.CosmeticDecorator;
+
 public class BlueHairDecorator extends CosmeticDecorator {
 
     public BlueHairDecorator(CharacterClothing cosmos)

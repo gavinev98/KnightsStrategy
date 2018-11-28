@@ -1,24 +1,20 @@
+package Observer;
 
 
-
-
-import sun.audio.AudioData;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
+import sun.audio.*;
 
 
 import java.io.FileInputStream;
 
 
-public class GameSoundObserver implements Observer{
+public class GameSoundObserver implements Observer {
 
     //creating boolean variable to play sound.
     private boolean isSoundPlaying = false;
 
     Subject concreteSubject;
 
-    // creating constructor using dependency injection and registering the GameSound Observer.
+    // creating constructor using dependency injection and registering the GameSound Observer.Observer.
     public GameSoundObserver(Subject concreteSubject)
     {
         this.concreteSubject = concreteSubject;
@@ -35,9 +31,8 @@ public class GameSoundObserver implements Observer{
         try
         {
             AudioData data = new AudioStream(new FileInputStream(filepath)).getData();
-            ContinuousAudioDataStream sound = new ContinuousAudioDataStream(data);
+            AudioDataStream sound = new AudioDataStream(data);
             AudioPlayer.player.start(sound);
-
 
         }
         catch(Exception e)
@@ -53,7 +48,7 @@ public class GameSoundObserver implements Observer{
 
             double charHealth = obs;
             if(charHealth <= 0) {
-                characterHealth("C:/Users/Gavin Everett/Desktop/KnightsStrategy/src/pacman_death.wav");
+                characterHealth("C:/Users/Gavin Everett/Desktop/KnightsStrategy/src/Music/pacman_death.wav");
             }
             else {
                 System.out.println("Your character is still alive");

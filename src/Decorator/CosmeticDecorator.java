@@ -1,3 +1,5 @@
+package Decorator;
+
 public abstract class CosmeticDecorator implements CharacterClothing {
 
      CharacterClothing cosmo;

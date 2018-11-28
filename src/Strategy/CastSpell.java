@@ -1,3 +1,7 @@
+package Strategy;
+
+import Strategy.FightingOptions;
+
 public class CastSpell implements FightingOptions {
 
 

@@ -1,3 +1,5 @@
+package Observer;
+
 public interface Observer {
 
         // This will take in the character health.
