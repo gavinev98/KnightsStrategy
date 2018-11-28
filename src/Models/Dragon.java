@@ -37,7 +37,7 @@ public class Dragon extends Character implements CharacterClothing, IsAlive {
 
     @Override
     public String getName() {
-        return "Models.Dragon";
+        return "Dragon";
     }
 
     @Override
