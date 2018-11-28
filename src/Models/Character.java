@@ -5,13 +5,9 @@ import Decorator.CharacterClothing;
 import Observer.Observer;
 import Strategy.FightingOptions;
 import TemplateMethod.LootMethod;
-
-
+import State.*;
 
 import java.util.ArrayList;
-
-
-
 
 public  class Character implements Subject, CharacterClothing {
 
@@ -19,13 +15,15 @@ public  class Character implements Subject, CharacterClothing {
     LootMethod methods;
 
     private ArrayList<Observer> observers;
+
     String name;
     double health;
     String attackOptions;
     String specialAbility;
     String clothingOptions;
 
- 
+    State state;
+
 
 
 
@@ -36,6 +34,8 @@ public  class Character implements Subject, CharacterClothing {
         this.clothingOptions = clothingOptions;
         this.methods = methods;
         this.observers = new ArrayList();
+        state = new WalkingState();
+
     }
 
 
@@ -59,6 +59,17 @@ public  class Character implements Subject, CharacterClothing {
     public String getClothingOptions() {
         return this.clothingOptions;
     }
+
+    public void setState(State state)
+    {
+        this.state = state;
+    }
+
+    public State getState()
+    {
+        return state;
+    }
+
 
     public void setAttack(FightingOptions fight) {
         this.fightingOptions = fight;
@@ -87,6 +98,7 @@ public  class Character implements Subject, CharacterClothing {
 // This is for the decorator pattern. I was going to make it abstract instead of interface but complications arose.
     @Override
     public void clothingOption() {/* TODO */}
+
 
 
 
