@@ -5,6 +5,7 @@ import Decorator.CharacterClothing;
 import Models.Character;
 import Observer.*;
 import FactoryMethod.*;
+import State.WalkingState;
 
 import java.util.Scanner;
 public class GameDriver {
@@ -40,50 +41,61 @@ public class GameDriver {
 
             typeOfCharacter = type.createCharacter(typeofchar, nameOfChar, healthval,attackoptions,clothingopts);
 
+            if (typeOfCharacter != null) {
+                // I will create methods here for adding blue hair / using stealing methods / loosing health for observer etc.
 
-        }
+                //Observer.Observer for my game monitoring health.
+                GameSoundObserver soundObserver1 = new GameSoundObserver(typeOfCharacter);
+                WalkingState state = new WalkingState();
 
-        if (typeOfCharacter != null) {
-            // I will create methods here for adding blue hair / using stealing methods / loosing health for observer etc.
+                System.out.println("Character sucessfully created");
 
-            //Observer.Observer for my game monitoring health.
-            GameSoundObserver soundObserver1 = new GameSoundObserver(typeOfCharacter);
+                System.out.println("-----------------------");
 
-            System.out.println("Character sucessfully created");
+                state.playerState(typeOfCharacter);
 
-            System.out.println("-----------------------");
+                System.out.print("There is a wizard nearby do you wish to perform a hit and run?");
+                System.out.println("");
+                typeOfCharacter.steal();
 
+                System.out.println("You have been caught and the wizard has hit you with a spell!!");
+                //Showing off the use of the observer. Once the health gets updated it will notify and observer and will output message of character status.
+                typeOfCharacter.setHealth(50);
+                System.out.println("Your health is pretty low get to cover :" + typeOfCharacter.getHealth());
 
-            System.out.print("There is a wizard nearby do you wish to perform a hit and run?");
-            System.out.println("");
-            typeOfCharacter.steal();
+                System.out.println("*bandages up and tries to identify location of wizard");
+                System.out.println("Wizard spotted engaging!");
+                typeOfCharacter.attackEnemy();
 
-            System.out.println("You have been caught and the wizard has hit you with a spell!!");
-            //Showing off the use of the observer. Once the health gets updated it will notify and observer and will output message of character status.
-            typeOfCharacter.setHealth(50);
-            System.out.println("Your health is pretty low get to cover :" + typeOfCharacter.getHealth());
-
-            System.out.println("*bandages up and tries to identify location of wizard");
-            System.out.println("Wizard spotted engaging!");
-            typeOfCharacter.attackEnemy();
-
-            System.out.println("Wizard has hit you again!!");
-            typeOfCharacter.setHealth(-1);
-
-
-            System.out.println("Game Over");
-
-            System.out.println("-----------------------");
+                System.out.println("Wizard has hit you again!!");
+                typeOfCharacter.setHealth(-1);
 
 
-            System.out.print("Do you wish to apply blue hair to your character ?");
-            String applyhair = input.nextLine();
+                System.out.println("Game Over");
+
+                System.out.println("-----------------------");
+
+
+
+
+
+
+                System.out.print("Do you wish to apply blue hair to your character ?");
+                String applyhair = input.nextLine();
 
                 CharacterClothing applyClothing = new BlueHairDecorator(typeOfCharacter);
                 applyClothing.clothingOption();
 
 
 
+
+
+
+            }
+
+
         }
+
+
     }
 }
