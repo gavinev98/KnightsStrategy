@@ -2,9 +2,9 @@ package Decorator;
 
 import Decorator.CosmeticDecorator;
 
-public class BlueHairDecorator extends CosmeticDecorator {
+public class HairDecorator extends CosmeticDecorator {
 
-    public BlueHairDecorator(CharacterClothing cosmos)
+    public HairDecorator(CharacterClothing cosmos)
     {
         super(cosmos);
 
@@ -13,7 +13,7 @@ public class BlueHairDecorator extends CosmeticDecorator {
     @Override
     public void clothingOption() {
         super.clothingOption();
-        System.out.println("Blue Hair applied");
+        System.out.println("Applied");
 
     }
 
