@@ -12,11 +12,11 @@ public class CharacterFactory {
         this.characterFactory = characterFactory;
     }
 
-    public Character createCharacter(String characterType, String name, double health, String attackotions, String clothing)
+    public Character createCharacter(String characterType, String name, double health, String clothing)
     {
         Character character;
 
-        character = characterFactory.createCharacter(characterType,name,health,attackotions,clothing);
+        character = characterFactory.createCharacter(characterType,name,health,clothing);
 
 
 
