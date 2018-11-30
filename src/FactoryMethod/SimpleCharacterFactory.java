@@ -8,7 +8,7 @@ import TemplateMethod.UndercoverMethod;
 
 public class SimpleCharacterFactory {
 
-        public Character createCharacter(String characterType, String name, double health, String attackotions,String clothing)
+        public Character createCharacter(String characterType, String name, double health,String clothing)
         {
 
 
@@ -17,12 +17,12 @@ public class SimpleCharacterFactory {
 
             if(characterType.equals("T"))
             {
-                type = new Troll(name,health,attackotions,clothing, new HitAndRunMethod());
+                type = new Troll(name,health,clothing, new HitAndRunMethod());
             }
             else
                 if(characterType.equals("D"))
                 {
-                   type = new Dragon(name,health,attackotions,clothing, new UndercoverMethod());
+                   type = new Dragon(name,health,clothing, new UndercoverMethod());
                 }
 
                 return type;

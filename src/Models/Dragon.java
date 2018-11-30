@@ -12,8 +12,8 @@ public class Dragon extends Character implements CharacterClothing, IsAlive {
 
 
 
-    public Dragon(String name, double health, String attackOptions, String clothingOptions, LootMethod method) {
-        super(name, health, attackOptions, clothingOptions, method);
+    public Dragon(String name, double health, String clothingOptions, LootMethod method) {
+        super(name, health, clothingOptions, method);
         fightingOptions = new BreathFire();
 
     }
@@ -31,8 +31,10 @@ public class Dragon extends Character implements CharacterClothing, IsAlive {
 
     @Override
     public void clothingOption() {
-        System.out.println("Hair Color:");
+        System.out.println("Blue Hair");
     }
+
+
 
 
     @Override

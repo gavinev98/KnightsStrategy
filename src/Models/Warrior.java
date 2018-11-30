@@ -8,8 +8,8 @@ import TemplateMethod.LootMethod;
 public class Warrior extends Character implements CharacterClothing, IsAlive {
 
 
-    public Warrior(String name, double health, String attackOptions, String clothingOptions, LootMethod method) {
-            super(name, health, attackOptions, clothingOptions, method);
+    public Warrior(String name, double health, String clothingOptions, LootMethod method) {
+            super(name, health, clothingOptions, method);
     }
 
 
@@ -23,6 +23,8 @@ public class Warrior extends Character implements CharacterClothing, IsAlive {
 
     @Override
     public void clothingOption() {
-        System.out.println("Hair Color:");
+        System.out.println("Red Hair");
     }
+
+
 }

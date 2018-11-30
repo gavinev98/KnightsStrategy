@@ -18,7 +18,6 @@ public  class Character implements Subject, CharacterClothing {
 
     String name;
     double health;
-    String attackOptions;
     String specialAbility;
     String clothingOptions;
 
@@ -27,10 +26,9 @@ public  class Character implements Subject, CharacterClothing {
 
 
 
-    public Character(String name, double health, String attackOptions, String clothingOptions, LootMethod methods) {
+    public Character(String name, double health,String clothingOptions, LootMethod methods) {
         this.name = name;
         this.health = health;
-        this.attackOptions = attackOptions;
         this.clothingOptions = clothingOptions;
         this.methods = methods;
         this.observers = new ArrayList();
@@ -71,13 +69,14 @@ public  class Character implements Subject, CharacterClothing {
     }
 
 
-    public void setAttack(FightingOptions fight) {
-        this.fightingOptions = fight;
-    }
-
     //Attack enemy used for strategy.
     public void attackEnemy() {
         this.fightingOptions.attack();
+    }
+
+    public FightingOptions getAttack()
+    {
+        return fightingOptions;
     }
 
     // HealthChanged Method to notify observers.
@@ -98,10 +97,6 @@ public  class Character implements Subject, CharacterClothing {
 // This is for the decorator pattern. I was going to make it abstract instead of interface but complications arose.
     @Override
     public void clothingOption() {/* TODO */}
-
-
-
-
 
 
     //Registering Observers

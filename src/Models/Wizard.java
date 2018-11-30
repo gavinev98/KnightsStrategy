@@ -7,8 +7,8 @@ import TemplateMethod.LootMethod;
 
 public class Wizard extends Character implements CharacterClothing, IsAlive {
 
-    public Wizard(String name, double health, String attackOptions,  String clothingOptions, LootMethod methods) {
-        super(name, health, attackOptions, clothingOptions, methods);
+    public Wizard(String name, double health,  String clothingOptions, LootMethod methods) {
+        super(name, health, clothingOptions, methods);
     }
 
 
@@ -20,8 +20,9 @@ public class Wizard extends Character implements CharacterClothing, IsAlive {
 
     @Override
     public void clothingOption() {
-        System.out.println("Hair Color:");
+        System.out.println("Purple Hair");
     }
+
 
 
 

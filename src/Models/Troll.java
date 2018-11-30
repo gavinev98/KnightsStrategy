@@ -9,8 +9,8 @@ import Interface.*;
 
 public class Troll extends Character implements CharacterClothing, IsAlive {
 
-    public Troll(String name, double health, String attackOptions, String clothingOptions, LootMethod method) {
-        super(name, health, attackOptions, clothingOptions, method);
+    public Troll(String name, double health, String clothingOptions, LootMethod method) {
+        super(name, health, clothingOptions, method);
         fightingOptions = new TrollSword();
 
 
@@ -25,6 +25,8 @@ public class Troll extends Character implements CharacterClothing, IsAlive {
 
     @Override
     public void clothingOption() {
-        System.out.println("Hair Color:");
+        System.out.println("Green Hair");
     }
+
+
 }
